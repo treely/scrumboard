@@ -65,14 +65,12 @@ const TableRow: React.FC<PropTypes> = ({ story }: PropTypes) => {
     collect,
   });
 
-  const [
-    { isOver: isOverVerify, canDrop: canDropVerify },
-    dropVerify,
-  ] = useDrop({
-    accept: [TODO, IN_PROGRESS, DONE],
-    drop: onDropVerify,
-    collect,
-  });
+  const [{ isOver: isOverVerify, canDrop: canDropVerify }, dropVerify] =
+    useDrop({
+      accept: [TODO, IN_PROGRESS, DONE],
+      drop: onDropVerify,
+      collect,
+    });
 
   const [{ isOver: isOverDone, canDrop: canDropDone }, dropDone] = useDrop({
     accept: [TODO, IN_PROGRESS, VERIFY],
