@@ -20,7 +20,9 @@ const Board: React.FC = () => {
       setLoading(false);
     };
 
-    loadData();
+    setInterval(() => {
+      loadData();
+    }, 5000);
   }, []);
 
   useEffect(() => {
